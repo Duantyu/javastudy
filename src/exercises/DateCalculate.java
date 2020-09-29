@@ -9,7 +9,7 @@ import java.io.*;
 
 public class DateCalculate {
 	public static void main(String args[]) throws NumberFormatException, IOException, ParseException {
-			int days = 0,year1,month1,day1,year2=0,month2=0,day2=0,year3=0,month3=0,day3=0,i=0,j=0,count=0,sum=0;
+			int days = 0,year1,month1,day1,year2=0,month2=0,day2=0,year3=0,month3=0,day3=0,i=0,j=0,count=0,sum=0,sum1=0;
 			Scanner scan = new Scanner(System.in);
 			System.out.println("输入日期的年份：");
 			year1=scan.nextInt();  //输入年份
@@ -34,7 +34,7 @@ public class DateCalculate {
 		    	}
 		    System.out.println(days);
 		    if(2020<=year1) {
-		    	for(i=2020;i<year1;i++) {
+		    	for(i=2020;i<=year1;i++) {
 		    		if((i % 4 == 0 && i % 100 != 0) || i % 400 == 0 || (i % 3200 == 0 && i % 1728000 ==0)) {
 		    			count+=1;                  //判断与初始日期相差年份中的闰年
 		    		}
@@ -56,7 +56,7 @@ public class DateCalculate {
 		    		sum = sum - days;
 		    		System.out.println(sum);
 		    		if(day1 <= 28) {
-		    			sum = sum - (28-day1);  //计算天数差距的天数		    			
+		    			sum =sum - (28-day1);  //计算天数差距的天数		    			
 		    		}
 		    		System.out.println(sum);
 		    		if(day1 > 28) {
@@ -81,16 +81,26 @@ public class DateCalculate {
 			    	}
 			    	System.out.println(sum);
 		    	}
+
+		    	switch(sum%7) {  //相对于初始时间2020-9-28的未来时间的星期确定
+		    	case 0: System.out.println("星期日");break;
+		    	case 1: System.out.println("星期一");break;
+		    	case 2: System.out.println("星期二");break;
+		    	case 3: System.out.println("星期三");break;
+		    	case 4: System.out.println("星期四");break;
+		    	case 5: System.out.println("星期五");break;
+		    	case 6: System.out.println("星期六");break;
+		    	}
 		    	}
 
 		    if(2020>year1) {
-		    	for(j=2020;j>year1;j--) {
+		    	for(j=2020;j>=year1;j--) {
 		    		if((j % 4 == 0 && j % 100 != 0) || j % 400 == 0 || (j % 3200 == 0 && j % 1728000 ==0)) {
 		    			count+=1;                  //判断与初始日期相差年份中的闰年
 		    		}
 		    	}
-		    		sum=count+365*(2020-year1);  //计算年份差距的天数
-		    		System.out.println(sum);
+		    		sum1=count+365*(2020-year1);  //计算年份差距的天数
+		    		System.out.println(sum1);
 			    	if(month1 <= 9) {
 			    		switch(9 - month1) {  //计算月份差距的天数
 			    		case 0: days=0;break;
@@ -103,16 +113,16 @@ public class DateCalculate {
 			    		case 7: days=212;break;
 			    		case 8: days=243;break;		    			
 			    		}
-			    	sum = sum + days;
-			    	System.out.println(sum);
+			    	sum1 = sum1 + days;
+			    	System.out.println(sum1);
 			    	if(day1 <= 28) {
-			    		sum = sum + (28-day1);  //计算天数差距的天数
+			    		sum1 = sum1 + (28-day1);  //计算天数差距的天数
 			    	}
-		    		System.out.println(sum);
+		    		System.out.println(sum1);
 			    	if(day1 >28) {
-			    		sum = sum - (day1 - 28 );
+			    		sum1 = sum1 - (day1 - 28 );
 			    	}
-			    	System.out.println(sum);
+			    	System.out.println(sum1);
 			    	}
 			    	
 			    	if(month1 > 9) {
@@ -121,28 +131,32 @@ public class DateCalculate {
 			    		case 2: days=61;
 			    		case 3: days=91;
 			    		}
-			    		sum = sum - days;
-			    		System.out.println(sum);
+			    		sum1 = sum1 - days;
+			    		System.out.println(sum1);
 				    	if(day1 <= 28) {
-				    		sum = sum - (28-day1);  //计算天数差距的天数			    		
+				    		sum1 = sum1 + (28-day1);  //计算天数差距的天数			    		
 				    	}
-				    	System.out.println(sum);
+				    	System.out.println(sum1);
 				    	if(day1 > 28) { 
-				    		sum = sum + (day1 - 28);				    	
+				    		sum1 = sum1 - (day1 - 28);				    	
 				    	}
-				    	System.out.println(sum);
+				    	System.out.println(sum1);
 			    	}
+			    	switch(8-sum1%7) {  //相对于初始时间2020-9-28的过去时间的星期确定
+				    case 0: System.out.println("星期日");break;
+				    case 1: System.out.println("星期一");break;
+				    case 2: System.out.println("星期二");break;
+				    case 3: System.out.println("星期三");break;
+				    case 4: System.out.println("星期四");break;
+				    case 5: System.out.println("星期五");break;
+				    case 6: System.out.println("星期六");break;
+				    }
 		    	}
-		    
-		    switch(sum%7) {
-		    case 0: System.out.println("星期日");break;
-		    case 1: System.out.println("星期一");break;
-		    case 2: System.out.println("星期二");break;
-		    case 3: System.out.println("星期三");break;
-		    case 4: System.out.println("星期四");break;
-		    case 5: System.out.println("星期五");break;
-		    case 6: System.out.println("星期六");break;
-		    }
+		   
+		 
+	
+		    	
+		   
 		    //设置转换的日期格式
 		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		    BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));  //创建第一个日期实例
