@@ -12,7 +12,7 @@ public class Date {
 		month = 1;
 		year = 1998;
 	}
-	Date (Date d) {  //这是带一个参数的构造方法（3）
+	Date (Date d) {  //这是带一个参数的构造方法（ 3）
 		day = d.day;
 		month = d.month;
 		year = d.year;
@@ -23,7 +23,7 @@ public class Date {
 	}
 	
 	public Date tomorrow() {  //定义返回Date类型的普通方法tomorrow()
-		Date d = new Date(this);  //说明一个对象，this有点不明白？？？此处实例化（3）构造方法需要实例化对象
+		Date d = new Date(this);  //说明一个对象，this是调用自己
 		d.day++;  //判断明天进入下一月份或下一年的情况
 		if (d.day > d.daysInMonth()) {  //daysInMonth()返回每个月中不同的天数
 			d.day = 1;  //重置天数
