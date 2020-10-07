@@ -23,7 +23,7 @@ public class Date {
 	}
 	
 	public Date tomorrow() {  //定义返回Date类型的普通方法tomorrow()
-		Date d = new Date(this);  //说明一个对象，this是调用自己
+		Date d = new Date(this);  //说明一个对象，this是调用自己,即本类，构造方法的引用
 		d.day++;  //判断明天进入下一月份或下一年的情况
 		if (d.day > d.daysInMonth()) {  //daysInMonth()返回每个月中不同的天数
 			d.day = 1;  //重置天数
@@ -74,5 +74,5 @@ public class Date {
 		System.out.println("Its tomorrow is (dd / mm / yy)：");
 		d2.tomorrow().printDate(); 
 		System.out.println();		
-	}
+	}  
 }
