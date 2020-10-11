@@ -25,7 +25,7 @@ public class MyVector extends Vector {  //定义MyVector继承自父类Vector
 		System.out.println("Number of vector elements is " + length + " and they are : ");
 		for (int i = 0; i < length; i++) {  //遍历打印元素
 			o = elementAt(i);
-			if (o instanceof char[]) {
+			if (o instanceof char[]) {  //instanceof运算符判断o的类型
 				System.out.println(String.copyValueOf((char[]) o));
 			}
 			else 
