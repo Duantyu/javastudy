@@ -54,6 +54,14 @@ class SuperClass {
 		System.out.println("I am in superclass!");
 		System.out.println("I will go back now ...");
 	}
+	/*public void method() {
+		System.out.println("superclass method!");
+	}
+	superclass的method方法允许访问的范围为public*/
+	/*void method() {
+		
+	}
+	superclass没有抛出异常*/
 }
 class SubClass extends SuperClass{
 	void showMyPosition() {
@@ -61,4 +69,12 @@ class SubClass extends SuperClass{
 		super.showMyPosition();  //显示并调用父类的函数
 		System.out.println("Now I have moved to subclass!");
 	}
+	/*private void method() {
+		System.out.println("subclass method");
+	}
+	子类重写方法允许访问的范围不能小于原方法*/
+	/*void method() throws IOException{
+		
+	}
+	重写方法所抛出的异常不能比原方法更多*/
 }
