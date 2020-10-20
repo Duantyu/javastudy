@@ -26,17 +26,19 @@ public class Point {
 		Point p = new Point(1, 1);
 		System.out.println("p.distance() = " + p.distance());
 		Point3d q = new Point3d(1,1,1);
-		System.out.println("q.distance() = " + q.distance(1,1,1));
+		System.out.println("q.distance() = " + q.distance());
 		SubClass son = new SubClass();   //创建SubClass子类实例对象
 		son.showMyPosition();		
 	}
 }
 class Point3d extends Point {  //Point3d类是Point类的子类
+	double z;
 	Point3d(double x1, double y1, double z1) {  //父类有了人为指定的构造函数,就覆盖了本身自动生成的默认无参构造函数,换言之,父类没有无参构造函数,那么就出错了。不管子类的构造函数是什么样的形式,都会默认调用父类的默认的无参的构造函数。
 		super(x1, y1);
+		this.z = z1;
 		// TODO Auto-generated constructor stub
 	}
-	public double distance(double x, double y, double z) {
+	public double distance() {
 		return Math.sqrt(x*x + y*y + z*z);
 		}
 	//public double distance() {  //三维平面点与原点距离的计算
