@@ -1,5 +1,4 @@
 package test;
-
 public class CircumferenceTester {
 	public static void main(String args[]) {
 		CircleArea c1 = new CircleArea();
