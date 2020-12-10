@@ -24,6 +24,9 @@ public class Student {
 		sex = Sex;
 		date = d;
 	}
+	public Student(int i, String string, int j, String string2) {
+		// TODO Auto-generated constructor stub
+	}
 	//来自object基类的重载
 	public String toString()
 	{

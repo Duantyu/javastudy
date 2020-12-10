@@ -9,7 +9,7 @@ public class PipedStreamDemo {
 		byte[] datamover = {0,2,3};  //datamover指向地址，输出第一个
 		// byte datamover = 0; 正常通过编译
 		// int datamover = 10; 正常通过编译
-		//int[] datamover = {10,5,7}; 无法正常 pos.write()
+		//int[] datamover = {10,5,7}; 无法正常 pos.write(),引用对象。必须实现序列化对象。
 		System.out.println("\n Now I start to work.....\n");
 		try {
 			System.out.println("transfer " + datamover + " to ps. \n");
