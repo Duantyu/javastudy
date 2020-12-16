@@ -9,6 +9,7 @@ import java.io.IOException;
 public class BufferedReaderTest {
 	public static void main(String args[]) {
 		try {
+			//Reader-InputStream  Writer-OutputStream
 			BufferedReader in = new BufferedReader(new FileReader("myAccount2.dat"));
 			BankAccount2 aBankAccount = new  BankAccount2(null, 0, 0);
 			aBankAccount.setOwnerName(in.readLine());;
